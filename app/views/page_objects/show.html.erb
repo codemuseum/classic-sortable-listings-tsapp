@@ -1,0 +1,9 @@
+<% stylesheets 'classic-sortable-listings' %>
+<% # javascripts 'prototype', 'effects', 'dragdrop', 'assets' %>
+
+<%# Takes full_listings, column_name %>
+<div class="listings">
+  <% @page_object.full_listings.each do |listing| %>
+    <%= render :partial => 'page_objects/listing', :locals => { :listing => listing } %>
+  <% end %>
+</div>

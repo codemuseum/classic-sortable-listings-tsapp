@@ -1,0 +1,38 @@
+<% stylesheets 'classic-sortable-listings', 'classic-sortable-listings-edit' %>
+<% javascripts 'prototype', 'effects', 'dragdrop', 'assets', 'classic-sortable-listings-edit' %>
+
+<%= render :partial => 'selector' %>
+
+<% fields_for_page_object do |f| %>
+
+  
+  <div class="datapath">
+    <%= f.label :data_path, 'Search for (data path):' %>
+    <span class="readonly">
+      <%=h f.object.data_path %>
+      <a class='button'>change</a>
+    </span>
+    <span class="editable hidden">
+      <%= f.text_field :data_path %>
+    </span>
+  </div>
+  
+  <div class="functions">
+    <%= link_to_new_page "New #{f.object.data_path.blank? ? 'Page' : f.object.data_path.singularize.titleize}...", 
+          { :representing => f.object.data_path.blank? ? nil : f.object.data_path.singularize }, { :class => 'button new-page' } %>
+    -or- 
+    <a class="add-listing button" title="Add Listing">Add Listing</a>
+  </div>
+  
+  <%= f.hidden_field "piped_listings", :class => 'piped-listings-value' %>
+  
+  <div class="listings" id="classic_sortable_listings_box_<%= @page_object.urn %>">
+  <% @page_object.full_listings.each do |listing| %>
+    <%= render :partial => 'listing_edit', :locals => { :listing => listing } %>
+  <% end %>
+  </div>
+
+  <div class="new-listing-code" style="display:none">
+    <%= render(:partial => 'listing_edit', :locals => { :stub => true }) %>
+  </div>
+<% end %>

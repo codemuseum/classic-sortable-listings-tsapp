@@ -1,0 +1,10 @@
+<%# optionally takes :stub = false to say that this should be created for the stub %>
+<% stub = false if local_assigns[:stub].nil? -%>
+<div class="listing urn-<%= stub ? '_URN_' : listing.urn %>">
+  
+  <div class="ts-close-button remove">
+    <a>Delete Listing</a>
+  </div>
+  
+  <%= render :partial => 'listing_link', :locals => { :listing => local_assigns[:listing] ? listing : nil, :stub => stub }%>
+</div>

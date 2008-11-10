@@ -1,0 +1,17 @@
+<%# Takes listing -%>
+<% 
+  stub = false if local_assigns[:stub].nil?  
+  img_src = if stub 
+    image_tag('_PICTURE_', :alt => '_NAME_')
+  elsif listing.respond_to?(:picture) && !listing.picture.blank?
+    image_tag(listing.picture, :alt => "#{listing.name rescue ''} Picture")
+  else
+    nil
+  end
+-%>
+<a href="<%=h stub ? '_URL_' : listing.url rescue '#' %>" class="listing-link urn-<%= stub ? '_URN_' : listing.urn %>">
+  <div class="img"><%= img_src if img_src  %></div>
+  <div class="name"><%=h stub ? '_NAME_' : listing.name rescue 'unknown' %></div>
+  <div class="description"><%=h stub ? '_DESCRIPTION_' : listing.description  rescue 'unknown' %></div>
+  <div class="clearfix">&nbsp;</div>
+</a>

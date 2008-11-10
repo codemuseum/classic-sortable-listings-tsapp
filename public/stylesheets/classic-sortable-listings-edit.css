@@ -1,0 +1,5 @@
+.app-classic-sortable-listings .functions,
+.app-classic-sortable-listings .datapath {text-align:right; margin:10px;}
+.app-classic-sortable-listings a.button { cursor:pointer; border:1px solid #aaa; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding:2px 5px; }
+
+.app-classic-sortable-listings .selector div.remove {display:none;}

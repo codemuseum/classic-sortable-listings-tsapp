@@ -1,0 +1,18 @@
+
+.app-classic-sortable-listings .listing { position: relative; }
+.app-classic-sortable-listings .listing  { width: 482px; margin-right: auto; margin-left: auto; }
+.app-classic-sortable-listings .listing a { display: block; text-decoration: none; padding: 10px 12px 16px 10px; margin-bottom: 20px;}
+.app-classic-sortable-listings .listing a .img { float: left; text-align: center; width: 100px; }
+.app-classic-sortable-listings .listing a .img img { width: 100px; border:0px; }
+.app-classic-sortable-listings .listing a .name,
+.app-classic-sortable-listings .listing a .description { margin-left: 112px; }
+.app-classic-sortable-listings .listing a .name { margin-top: 5px; text-decoration: underline; font-size: 130%; }
+
+.app-classic-sortable-listings .clearfix {clear: both;visibility: hidden;font-size: 1px;line-height: 1px;}
+
+
+/* fixes problems with ie HasLayout - record-link elements were peek-a-booing */
+*:first-child+html .app-classic-sortable-listings .listing,
+*:first-child+html .app-classic-sortable-listings .listing a { zoom: 1; }
+* html .app-classic-sortable-listings .listing,
+* html .app-classic-sortable-listings .listing a { zoom: 1; }

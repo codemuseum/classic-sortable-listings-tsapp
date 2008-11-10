@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  urn: MyString
+  data_path: MyString
+  listings: MyText
+
+two:
+  urn: MyString
+  data_path: MyString
+  listings: MyText
