@@ -1,4 +1,5 @@
 <%# Takes listing -%>
+<% stub = false if local_assigns[:stub].nil? %>
 <div class="listing urn-<%= stub ? '_URN_' : listing.urn %>">
   <%= render :partial => 'listing_link', :locals => { :listing => listing }%>
 </div>

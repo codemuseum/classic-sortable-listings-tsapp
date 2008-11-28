@@ -29,7 +29,7 @@ class PageObject < ActiveRecord::Base
       :conditions => { :urn => listings })
       
     self.full_listings = []
-    listings.each do |l| 
+    (listings || []).each do |l| 
       match = data.detect {|d| d.urn == l}
       full_listings << match if match
     end
